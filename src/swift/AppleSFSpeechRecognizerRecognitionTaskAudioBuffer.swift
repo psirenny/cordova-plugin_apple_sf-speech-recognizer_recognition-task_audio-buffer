@@ -183,16 +183,18 @@ class AppleSFSpeechRecognizerRecognitionTaskAudioBuffer: CDVPlugin {
     self.skipError = true
 
     let speechRecognitionTask = speechRecognizer.recognitionTask(with: speechRecognitionRequest, resultHandler: { (speechRecognitionResult, speechRecognitionError) in
-      if let error = speechRecognitionError {
-        let serializedError = ["localizedDescription": error.localizedDescription]
+      if !self.skipError {
+        if let error = speechRecognitionError {
+          let serializedError = ["localizedDescription": error.localizedDescription]
 
-        let pluginResult = CDVPluginResult(
-          status: CDVCommandStatus_ERROR,
-          messageAs: ["id": id, "value": serializedError]
-        )
+          let pluginResult = CDVPluginResult(
+            status: CDVCommandStatus_ERROR,
+            messageAs: ["id": id, "value": serializedError]
+          )
 
-        self.commandDelegate!.send(pluginResult, callbackId: command.callbackId)
-        return self.stop(id)
+          self.commandDelegate!.send(pluginResult, callbackId: command.callbackId)
+          return self.stop(id)
+        }
       }
 
       self.skipError = false

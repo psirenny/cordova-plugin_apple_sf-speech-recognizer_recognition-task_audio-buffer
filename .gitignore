@@ -1,0 +1,5 @@
+*.log
+.flow-coverage
+.nyc_*
+dist
+node_modules

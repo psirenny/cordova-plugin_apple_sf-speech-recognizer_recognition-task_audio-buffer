@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-apple-sf-speech-recognizer-recognition-task-audio-buffer" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>AppleSFSpeechRecognizerRecognitionTaskAudioBuffer</name>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="AppleSFSpeechRecognizerRecognitionTaskAudioBuffer">
+        <param name="ios-package" value="AppleSFSpeechRecognizerRecognitionTaskAudioBuffer" />
+      </feature>
+    </config-file>
+    <framework src="Speech.framework" weak="true" />
+    <source-file src="src/swift/AppleSFSpeechRecognizerRecognitionTaskAudioBuffer.swift" />
+  </platform>
+</plugin>

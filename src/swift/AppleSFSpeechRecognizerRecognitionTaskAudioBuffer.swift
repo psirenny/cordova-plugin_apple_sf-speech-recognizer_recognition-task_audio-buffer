@@ -189,7 +189,7 @@ class AppleSFSpeechRecognizerRecognitionTaskAudioBuffer: CDVPlugin {
 
           let pluginResult = CDVPluginResult(
             status: CDVCommandStatus_ERROR,
-            messageAs: ["id": id, "value": serializedError]
+            messageAs: serializedError
           )
 
           self.commandDelegate!.send(pluginResult, callbackId: command.callbackId)
@@ -223,10 +223,7 @@ class AppleSFSpeechRecognizerRecognitionTaskAudioBuffer: CDVPlugin {
 
         let pluginResult = CDVPluginResult(
           status: CDVCommandStatus_OK,
-          messageAs: [
-            "id": id,
-            "value": serializedSpeechRecognitionResult
-          ]
+          messageAs: serializedSpeechRecognitionResult
         )
 
         pluginResult?.setKeepCallbackAs(true)

@@ -8,5 +8,6 @@ export default (id: string, cb: Callback) => (
     err => cb(err),
     'AppleSFSpeechRecognizerRecognitionTaskAudioBuffer',
     'finish',
+    [id],
   )
 );

@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin_apple_sf-speech-recognizer_recognition-task_audio-buffer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Cordova plugin to start/stop SFSpeechRecognizer recognitionTask with an audio buffer",
   "author": "Dennis Torres <djtorres0@gmail.com>",
   "bugs": "https://github.com/talk-to-track/private/issues",
